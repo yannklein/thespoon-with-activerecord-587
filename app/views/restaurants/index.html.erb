@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="my-5">The restaurant app 🍽</h1>
+  <%= link_to "Add a restaurant to the list", new_restaurant_path, class: "btn btn-primary my-5" %>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <%= link_to restaurant_path(restaurant) do %>
+          <div class="shadow rounded p-3 mb-3">
+          <p><%= '⭐️ ' * restaurant.rating%></p>
+          <h3><%= restaurant.name %></h3>
+          <p>📍 <%= restaurant.address %></p>
+        <% end %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>  

@@ -1,0 +1,19 @@
+<div class="container">
+
+<% if restaurant.id.present? %>
+<h1 class="my-5">Change <%= restaurant.name %></h1>
+  <% else %>
+<h1 class="my-5">Add a new Restaurant</h1>
+<% end %>
+
+  <div class="row">
+    <div class="col-8">
+      <%= simple_form_for restaurant do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :rating %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
